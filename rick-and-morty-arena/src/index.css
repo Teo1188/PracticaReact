@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: 'handrawn';
+  src: url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+}
+
+.font-handrawn {
+  font-family: 'Indie Flower', cursive;
+}
+
+.swipe-animation {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.swipe-like {
+  transform: translateX(300px) rotate(15deg) scale(0.8);
+  opacity: 0;
+}
+.swipe-dislike {
+  transform: translateX(-300px) rotate(-15deg) scale(0.8);
+  opacity: 0;
+}
+/* Animación de ataque mejorada */
+@keyframes attack {
+  0% {
+    transform: translateY(0) scale(1);
+    z-index: 10;
+  }
+  50% {
+    transform: translateY(-40px) scale(1.2);
+    z-index: 20;
+  }
+  100% {
+    transform: translate(-50%, -80px) scale(1.5);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 30;
+  }
+}
+
+/* Animación de derrota (para el perdedor) */
+@keyframes defeat {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+}
+
+/* Estilos para los luchadores */
+.fighter {
+  position: relative;
+  animation: bounce 1s ease-in-out infinite alternate;
+  z-index: 10;
+  transition: all 0.5s ease;
+  will-change: transform;
+}
+
+/* Contenedor de la batalla */
+.battle-animation {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  width: 100%;
+  padding: 0 2rem;
+  gap: 2rem;
+  height: 100%;
+  min-height: 400px;
+}
+
+/* Estilo para el ganador */
+.victory {
+  animation: attack 1s forwards;
+}
+
+/* Estilo para el perdedor */
+.defeat {
+  animation: defeat 1s forwards;
+}

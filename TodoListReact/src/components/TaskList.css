@@ -1,0 +1,53 @@
+.contenedor {
+    margin-top: 50px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    width: 300px;
+    border-radius: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px;
+    background: #dcdcdc;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  li span {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  
+  li .botones {
+    display: flex;
+    gap: 5px;
+  }
+  
+  li button {
+    padding: 5px 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  li button.edit {
+    background: #4caf50;
+  }
+  
+  li button.delete {
+    background: #ff5c5c;
+  }
+  
+  .complete {
+    text-decoration: line-through;
+    color: rgb(23, 206, 96);
+  }
